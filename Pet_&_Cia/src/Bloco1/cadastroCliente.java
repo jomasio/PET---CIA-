@@ -12,18 +12,18 @@ public class cadastroCliente {
 	private String bairro;
 	private String cidade;
 	private String estado;
-	private int cep;
-	private int tel;
-    private int cpf;
-    private boolean sexo;
+	private String cep;
+	private String tel;
+    private String cpf;
+    private String sexo;
     
     //construtor da classe cliente
 	public cadastroCliente() {
 		super();
 	}
 	public cadastroCliente(String nome, String endereco, String bairro,
-			String cidade, String estado, int cep, int tel, int cpf,
-			boolean sexo) {
+			String cidade, String estado, String cep, String tel, String cpf,
+			String sexo) {
 		super();
 		this.nome = nome;
 		this.endereco = endereco;
@@ -67,31 +67,31 @@ public class cadastroCliente {
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
-	public int getCep() {
+	public String getCep() {
 		return cep;
 	}
-	public void setCep(int cep) {
+	public void setCep(String cep) {
 		this.cep = cep;
 	}
-	public int getTel() {
+	public String getTel() {
 		return tel;
 	}
-	public void setTel(int tel) {
+	public void setTel(String tel) {
 		this.tel = tel;
 	}
-	public int getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
-	public void setCpf(int cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	public boolean isSexo() {
+	public String getSexo() {
 		return sexo;
 	}
-	public void setSexo(boolean sexo) {
+	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
-
+	
     
     
 }
