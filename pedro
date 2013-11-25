@@ -1,0 +1,42 @@
+package com.Pet_Cia.controller;
+
+import java.sql.Results;
+
+public class cadastroAnimais {
+	
+	private IDAO dao;
+	
+	private static logger LOG = logger.getlogger(CadastroCliente.class);
+	
+	public cadastroAnimais(){
+		dao = new SQLiteDao();
+	}
+	
+	public boolean cadastrarFilmes(Animais animais){
+		LOG.debug(animais);
+	boolean res = false;
+try{
+	dao.salvar(animais);
+	res = true;
+} catch (SQLEcxption e){
+	LOG.error("Erro ao cadastrar Animal"+e.getMessage());
+	utilGUI.errorMessage("Erro ao Animal: "+e.getMessage());
+}
+	
+	return  res;
+	
+	}
+
+	public DefaultTableModel procurarAnimais(String coluna, String critério){
+		ResultSet rs = (ResultSet) dao.pesquisaComRetorno("filmes",coluna,criterio,true);
+		DefaultTableModel model = null;
+		
+		try{
+			model = buildTableModel(rs);
+		} catch (SQLException e){
+			LOG.error(e.getMessage());
+		}
+	      return model;
+	
+	}
+}
